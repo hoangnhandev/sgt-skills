@@ -16,11 +16,6 @@ metadata:
     - blade
     - authentication
     - authorization
-  related_skills:
-    - laravel-mvc-service-overview
-    - laravel-project-structure
-    - laravel-naming-conventions
-    - laravel-coding-standards
 ---
 
 # Laravel Best Practices - MVC + Service Architecture
@@ -505,53 +500,101 @@ User::active()->get();
 <x-user-card :user="$user" />
 ```
 
+## Rule Categories by Priority
+
+| Priority | Category | Prefix | Impact |
+|----------|----------|--------|--------|
+| 1 | Performance | `perf-` | CRITICAL |
+| 2 | Security | `security-` | CRITICAL |
+| 3 | Architecture | `arch-` | HIGH |
+| 4 | Coding Standards | `std-` | HIGH |
+| 5 | Data Layer | `data-` | HIGH |
+| 6 | Request Handling | `request-` | MEDIUM-HIGH |
+| 7 | Views | `views-` | MEDIUM |
+| 8 | Events & Testing | `events-` | MEDIUM |
+
+## Quick Reference
+
+### 1. Performance (CRITICAL)
+
+- `perf-eager-loading` - Prevent N+1 queries with eager loading
+- `perf-caching` - Cache strategies for performance
+
+### 2. Security (CRITICAL)
+
+- `security-authentication` - Sanctum, guards, password hashing
+- `security-authorization` - Policies, gates, permissions
+
+### 3. Architecture (HIGH)
+
+- `arch-thin-controllers` - Thin controllers with service layer
+- `arch-service-layer` - Service pattern for business logic
+
+### 4. Coding Standards (HIGH)
+
+- `std-psr-compliance` - PSR-12 coding standards
+- `std-naming-conventions` - Laravel naming conventions
+
+### 5. Data Layer (HIGH)
+
+- `data-eloquent-fat-models` - Fat models with scopes, relationships
+- `data-api-resources` - API resources for JSON responses
+- `data-pagination` - Pagination for Blade and API
+
+### 6. Request Handling (MEDIUM-HIGH)
+
+- `request-form-requests` - Form Request validation
+- `request-middleware` - Middleware for request filtering
+- `request-routing` - Route groups, resource routes
+
+### 7. Views (MEDIUM)
+
+- `views-blade-components` - Blade components over includes
+- `views-layouts` - Layout inheritance
+
+### 8. Events & Testing (MEDIUM)
+
+- `events-events-observers` - Event listeners and observers
+- `events-testing` - PHPUnit and Pest testing
+
 ## Resources
 
-### References (Detailed Documentation)
+### Rules (Detailed Best Practices)
+
+Individual rule files in `rules/` directory provide detailed explanations and code examples:
 
 | File | Content |
 |------|---------|
-| `references/service-layer.md` | Service class patterns, when to use/not use |
-| `references/controller-best-practices.md` | Thin controllers, RESTful conventions, DI |
-| `references/request-validation.md` | Form Request validation, custom rules |
-| `references/eloquent-best-practices.md` | Model scopes, accessors, relationships |
-| `references/api-resources.md` | Transform models to JSON responses |
-| `references/middleware.md` | Request filtering, auth, logging, CORS |
-| `references/naming-conventions.md` | PSR & Laravel naming conventions |
-| `references/coding-standards.md` | PSR-2, PSR-12, PHPDoc rules |
-| `references/routing.md` | Route groups, resource routes, model binding |
-| `references/views-blade.md` | Blade templates, components, layouts |
-| `references/eager-loading.md` | Eager loading, prevent N+1 queries |
-| `references/pagination.md` | Pagination for Blade & API |
-| `references/authentication.md` | Guards, providers, Sanctum |
-| `references/authorization.md` | Policies, gates, permissions |
-| `references/caching.md` | Cache strategies, drivers |
-| `references/events-listeners.md` | Events, listeners, observers |
-| `references/testing.md` | PHPUnit, Pest testing |
+| `rules/perf-eager-loading.md` | Eager loading, prevent N+1 queries |
+| `rules/perf-caching.md` | Cache strategies, drivers |
+| `rules/security-authentication.md` | Guards, Sanctum, password hashing |
+| `rules/security-authorization.md` | Policies, gates, permissions |
+| `rules/arch-thin-controllers.md` | Thin controllers, RESTful conventions |
+| `rules/arch-service-layer.md` | Service pattern for business logic |
+| `rules/std-psr-compliance.md` | PSR-2, PSR-12, PHPDoc rules |
+| `rules/std-naming-conventions.md` | PSR & Laravel naming conventions |
+| `rules/data-eloquent-fat-models.md` | Model scopes, accessors, relationships |
+| `rules/data-api-resources.md` | API resources for JSON responses |
+| `rules/data-pagination.md` | Pagination for Blade & API |
+| `rules/request-form-requests.md` | Form Request validation |
+| `rules/request-middleware.md` | Request filtering, auth, logging |
+| `rules/request-routing.md` | Route groups, resource routes |
+| `rules/views-blade-components.md` | Blade templates, components, layouts |
+| `rules/events-events-observers.md` | Events, listeners, observers |
+| `rules/events-testing.md` | PHPUnit, Pest testing |
+
+### References (Legacy Documentation)
+
+The `references/` directory contains original detailed documentation for reference.
 
 ### Scripts (Automation Tools)
 
-To create a new service class, you can:
+To create a new service class:
 
 1. **Create manually**: Create file in `app/Services/` following pattern `{Name}Service.php`
-2. **Use script**: `php laravel-best-pratices/scripts/make_service.php UserService` (if available)
+2. **Use script**: `php laravel-best-practices/scripts/make_service.php UserService` (if available)
 
 ## See Also
-
-### Related Skills
-
-- **laravel-mvc-service-overview** - MVC + Service Pattern architecture overview
-- **laravel-project-structure** - Standard Laravel folder structure
-- **laravel-naming-conventions** - Detailed naming rules
-- **laravel-coding-standards** - PSR-2, PSR-12, PHPDoc
-- **laravel-models-best-practices** - Fat Models with Scopes, Relationships
-- **laravel-controllers-guide** - Skinny Controllers best practices
-- **laravel-views-blade** - Blade templates and Components
-- **laravel-routing** - Routing conventions
-- **laravel-service-pattern** - Service Pattern fundamentals
-- **laravel-service-creation** - Creating Service classes
-- **laravel-form-requests** - Form Request validation
-- **laravel-service-workflows** - Complete CRUD with Service
 
 ### External References
 
@@ -562,4 +605,4 @@ To create a new service class, you can:
 
 ---
 
-**Version**: 1.2.0 | **Last Updated**: 2025-01-28
+**Version**: 1.2.0 | **Last Updated**: 2026-01-28
