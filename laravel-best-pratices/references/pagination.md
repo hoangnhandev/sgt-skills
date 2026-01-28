@@ -4,7 +4,7 @@
 
 ## Overview
 
-Laravel pagination giúp chia nhỏ large datasets thành manageable chunks.
+Laravel pagination helps split large datasets into manageable chunks.
 
 ## Basic Pagination
 

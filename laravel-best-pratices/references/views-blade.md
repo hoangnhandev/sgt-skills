@@ -4,7 +4,7 @@
 
 ## Overview
 
-Blade là Laravel's powerful templating engine. Nó cho phép viết clean templates với elegant syntax.
+Blade is Laravel's powerful templating engine. It allows you to write clean templates with elegant syntax.
 
 ## Blade Files
 

@@ -29,20 +29,20 @@ metadata:
 
 ## When to Use This Skill
 
-Dùng skill này khi:
+Use this skill when:
 
-- **Tạo mới Laravel code**: Controllers, Models, Services, Form Requests
-- **Refactor code**: Chuyển đổi sang kiến trúc MVC + Service chuẩn
-- **Tạo API endpoints**: RESTful API với validation và responses
-- **Implement business logic**: Logic phức tạp cần tách riêng khỏi controllers
-- **Setup cấu trúc dự án**: Organization theo Laravel conventions
-- **Fix naming issues**: Đặt tên đúng PSR và Laravel conventions
-- **Coding standards**: Viết code theo PSR-2, PSR-12
-- **Eloquent queries**: Scopes, relationships, eager loading
-- **Routing**: Resource routes, route groups, model binding
-- **Blade templates**: Components, layouts, directives
-- **Authentication & Authorization**: Guards, Policies, Gates
-- **Testing**: PHPUnit, Pest tests
+- **Creating Laravel code**: Controllers, Models, Services, Form Requests
+- **Refactoring code**: Converting to proper MVC + Service architecture
+- **Building API endpoints**: RESTful API with validation and responses
+- **Implementing business logic**: Complex logic separated from controllers
+- **Setting up project structure**: Organization following Laravel conventions
+- **Fixing naming issues**: Proper naming per PSR and Laravel conventions
+- **Applying coding standards**: Writing code following PSR-2, PSR-12
+- **Writing Eloquent queries**: Scopes, relationships, eager loading
+- **Defining routes**: Resource routes, route groups, model binding
+- **Creating Blade templates**: Components, layouts, directives
+- **Implementing Auth & Authorization**: Guards, Policies, Gates
+- **Writing tests**: PHPUnit, Pest tests
 
 ## Overview
 
@@ -143,23 +143,25 @@ app/
 
 | Principle | Description |
 |-----------|-------------|
-| **Thin Controllers** | Chỉ xử lý Request/Response, delegate cho Services |
-| **Fat Models** | Data queries, scopes, accessors trong Models |
-| **Form Requests** | Validation tách riêng khỏi controllers |
-| **Services** | Business logic, orchestrate nhiều models |
-| **Single Responsibility** | Mỗi class có một trách nhiệm rõ ràng |
+| **Thin Controllers** | Handle Request/Response only, delegate to Services |
+| **Fat Models** | Data queries, scopes, accessors in Models |
+| **Form Requests** | Validation separated from controllers |
+| **Services** | Business logic, orchestrate multiple models |
+| **Single Responsibility** | Each class has one clear responsibility |
 
 ## How to Use
 
 ### 1. Creating CRUD Workflow
 
-**Step 1: Tạo Service Class**
+**Step 1: Create Service Class**
 
 ```bash
-php .claude/skills/laravel/scripts/make_service.php UserService
+# Manually create service in app/Services/
+# Or use artisan command (if available)
+php artisan make:service UserService
 ```
 
-Hoặc tạo thủ công:
+Or create manually:
 
 ```php
 <?php
@@ -211,7 +213,7 @@ class UserService
 }
 ```
 
-**Step 2: Tạo Form Requests**
+**Step 2: Create Form Requests**
 
 ```bash
 php artisan make:request StoreUserRequest
@@ -243,7 +245,7 @@ class StoreUserRequest extends FormRequest
 }
 ```
 
-**Step 3: Tạo Controller với Dependency Injection**
+**Step 3: Create Controller with Dependency Injection**
 
 ```bash
 php artisan make:controller UserController --api
@@ -297,7 +299,7 @@ class UserController extends Controller
 }
 ```
 
-**Step 4: Tạo Model với Scopes**
+**Step 4: Create Model with Scopes**
 
 ```bash
 php artisan make:model User -m
@@ -350,7 +352,7 @@ class User extends Model
 }
 ```
 
-**Step 5: Định nghĩa Routes**
+**Step 5: Define Routes**
 
 ```php
 // routes/api.php
@@ -359,8 +361,8 @@ Route::apiResource('users', UserController::class);
 
 ### 2. Naming Conventions Quick Reference
 
-| Loại | Pattern | Ví dụ Đúng |
-|------|---------|------------|
+| Type | Pattern | Correct Example |
+|------|---------|-----------------|
 | Controller | singular + Controller | `UserController` |
 | Model | singular | `User` |
 | Service | singular + Service | `UserService` |
@@ -374,20 +376,18 @@ Route::apiResource('users', UserController::class);
 
 **Create CRUD for Entity:**
 ```bash
-# 1. Tạo Service
-php .claude/skills/laravel/scripts/make_service.php EntityService
-
-# 2. Tạo Model với migration
+# 1. Create Service class (manually in app/Services/)
+# 2. Create Model with migration
 php artisan make:model Entity -m
 
-# 3. Tạo Form Requests
+# 3. Create Form Requests
 php artisan make:request StoreEntityRequest
 php artisan make:request UpdateEntityRequest
 
-# 4. Tạo Controller
+# 4. Create Controller
 php artisan make:controller EntityController --api
 
-# 5. Định nghĩa routes
+# 5. Define routes
 # routes/api.php: Route::apiResource('entities', EntityController::class);
 ```
 
@@ -531,26 +531,27 @@ User::active()->get();
 
 ### Scripts (Automation Tools)
 
-| Script | Usage |
-|--------|-------|
-| `scripts/make_service.php` | Generate new Service class |
+To create a new service class, you can:
+
+1. **Create manually**: Create file in `app/Services/` following pattern `{Name}Service.php`
+2. **Use script**: `php laravel-best-pratices/scripts/make_service.php UserService` (if available)
 
 ## See Also
 
 ### Related Skills
 
-- **laravel-mvc-service-overview** - Tổng quan kiến trúc MVC + Service Pattern
-- **laravel-project-structure** - Cấu trúc thư mục chuẩn Laravel
-- **laravel-naming-conventions** - Quy tắc đặt tên chi tiết
+- **laravel-mvc-service-overview** - MVC + Service Pattern architecture overview
+- **laravel-project-structure** - Standard Laravel folder structure
+- **laravel-naming-conventions** - Detailed naming rules
 - **laravel-coding-standards** - PSR-2, PSR-12, PHPDoc
-- **laravel-models-best-practices** - Fat Models với Scopes, Relationships
+- **laravel-models-best-practices** - Fat Models with Scopes, Relationships
 - **laravel-controllers-guide** - Skinny Controllers best practices
-- **laravel-views-blade** - Blade templates và Components
+- **laravel-views-blade** - Blade templates and Components
 - **laravel-routing** - Routing conventions
 - **laravel-service-pattern** - Service Pattern fundamentals
-- **laravel-service-creation** - Tạo Service class
+- **laravel-service-creation** - Creating Service classes
 - **laravel-form-requests** - Form Request validation
-- **laravel-service-workflows** - CRUD hoàn chỉnh với Service
+- **laravel-service-workflows** - Complete CRUD with Service
 
 ### External References
 

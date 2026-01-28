@@ -4,7 +4,7 @@
 
 ## Overview
 
-Laravel events cung cấp simple observer pattern implementation, cho phép subscribe và listen cho các events trong application.
+Laravel events provide a simple observer pattern implementation, allowing you to subscribe and listen for events in your application.
 
 ## When to Use Events
 
@@ -130,7 +130,7 @@ class EventServiceProvider extends ServiceProvider
         parent::boot();
 
         // ✅ Good - Register events programmatically
-        Event::listen(orderCreated::class, [UpdateInventory::class, 'handle']);
+        Event::listen(OrderCreated::class, [UpdateInventory::class, 'handle']);
     }
 }
 ```

@@ -4,7 +4,7 @@
 
 ## Overview
 
-Laravel supports PHPUnit và Pest cho unit testing, feature testing, và browser testing.
+Laravel supports PHPUnit and Pest for unit testing, feature testing, and browser testing.
 
 ## Test Structure
 

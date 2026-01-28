@@ -4,7 +4,7 @@
 
 ## Overview
 
-Eager loading giải quyết **N+1 query problem** - một performance issue phổ biến khi làm việc với relationships.
+Eager loading solves the **N+1 query problem** - a common performance issue when working with relationships.
 
 ## What is N+1 Problem?
 

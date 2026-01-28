@@ -4,7 +4,7 @@
 
 ## Overview
 
-Laravel naming conventions遵循 PSR standards và cộng đồng Laravel best practices. Consistent naming giúp code dễ đọc và maintain.
+Laravel naming conventions follow PSR standards and Laravel community best practices. Consistent naming makes code easier to read and maintain.
 
 ## Class Naming Conventions
 

@@ -4,7 +4,7 @@
 
 ## Overview
 
-Laravel follows PHP Standards Recommendations (PSR) để ensure consistency và maintainability. Document này cover PSR-1, PSR-2, PSR-4, và PSR-12.
+Laravel follows PHP Standards Recommendations (PSR) to ensure consistency and maintainability. This document covers PSR-1, PSR-2, PSR-4, and PSR-12.
 
 ## PSR Compliance Summary
 
@@ -107,7 +107,7 @@ public function createUserWithProfileAndSubscriptionAndEmailVerification(array $
 }
 ```
 
-## Namespace và Use Declarations
+## Namespace and Use Declarations
 
 ### Namespace Declaration
 

@@ -4,7 +4,7 @@
 
 ## Overview
 
-Laravel authorization cung cấp 2 cách chính để manage access control: **Gates** và **Policies**.
+Laravel authorization provides 2 main ways to manage access control: **Gates** and **Policies**.
 
 ## Gates vs Policies
 

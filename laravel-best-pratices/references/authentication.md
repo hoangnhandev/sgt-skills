@@ -4,7 +4,7 @@
 
 ## Overview
 
-Laravel authentication provides flexible guards, providers, và password reset functionality.
+Laravel authentication provides flexible guards, providers, and password reset functionality.
 
 ## Authentication Flow
 

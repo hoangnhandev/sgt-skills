@@ -4,7 +4,7 @@
 
 ## Overview
 
-Laravel routing files nằm trong `routes/` directory. Mỗi file phục vụ mục đích khác nhau.
+Laravel routing files are located in the `routes/` directory. Each file serves a different purpose.
 
 ## Route Files
 

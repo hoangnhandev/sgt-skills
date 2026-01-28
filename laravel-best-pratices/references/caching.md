@@ -4,7 +4,7 @@
 
 ## Overview
 
-Laravel caching provides unified API cho various cache drivers như File, Database, Redis, Memcached.
+Laravel caching provides unified API for various cache drivers like File, Database, Redis, Memcached.
 
 ## Configuration
 
